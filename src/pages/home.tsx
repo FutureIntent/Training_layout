@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Logo_section from './home_components/logo_section';
 import Explore_section from './home_components/explore_section';
 import Fraction_section from './home_components/fraction_section';
+import Lane_section from './home_components/lane_section';
 
 function Home() {
 
@@ -12,6 +13,7 @@ function Home() {
         <Box sx={{ width: '100%' }}>           
             <Explore_section />
             <Fraction_section />
+            <Lane_section />
         </Box>
    )
 }
