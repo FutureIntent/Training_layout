@@ -100,4 +100,8 @@ width: 100%;
         height: 6vw !important;
         background-position: 0% 60% !important;
     }
+
+    .description_1 {
+    font-size: 3.5vw !important;
+    }
 }

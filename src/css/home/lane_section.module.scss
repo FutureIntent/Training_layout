@@ -1,12 +1,64 @@
 
+
 .container {
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
-    .wrapper {
+    .grid {
+        margin-top: 2%;
+        width: 90%;
         display: grid;
-        grid-template-columns: auto auto auto;
-        column-gap: 1%;
+        grid-template-columns: auto 1% auto 1% auto;
+        column-gap: 2%;
+        row-gap: 5%;
+
+        .cardSplitter { 
+            border-top: 0;
+            border-bottom: 0;
+            border-left: 0;
+            height: 70%;
+            margin: auto;
+            box-shadow: 0px 0px 3px 0px rgb(0 0 0 / 12%);
+        }
+
+        .actionArea {
+            text-align: center;
+        }
+    }
+}
+
+/* Large devices (laptops/desktops, 993px and up) */
+@media only screen and (max-width: 1200px) and (min-width: 993px) {
+    
+}
+
+/* Medium devices (landscape tablets, 769px and up) */
+@media only screen and (max-width: 992px) and (min-width: 769px) {
+    
+}
+
+/* Small devices (portrait tablets and large phones, 601px and up) */
+@media only screen and (max-width: 768px) and (min-width: 601px) {
+    
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) and (min-width: 0px) {
+    .grid {
+        width: 85% !important;
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .cardSplitter {
+        display: none;
+    }
+
+    .item {
+        &:nth-child(n+2){
+            margin-top: 3%;
+        }
     }
 }

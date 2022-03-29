@@ -1,15 +1,14 @@
-import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Typography } from '@mui/material';
+import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 import React from 'react';
 import section from './../../css/home/lane_section.module.scss';
 
 function Lane_section() {
 
     return (
-        <Box className={ section.container }>
-            <Container maxWidth='xl'>
-                <Box className={section.wrapper} sx={{width: 'auto'}}>
-                    <Card>
-                        <CardActionArea>
+        <Box className={ section.container }>        
+                <Box className={section.grid}>
+                <Card className={ section.item }>
+                    <CardActionArea className={ section.actionArea }>
                             <CardMedia
                                 component="img"
                                 height="auto"
@@ -26,9 +25,10 @@ function Lane_section() {
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
-                    </Card>
-                    <Card>
-                        <CardActionArea>
+                </Card>
+                <hr className={ section.cardSplitter }/>
+                <Card className={section.item}>
+                    <CardActionArea className={section.actionArea}>
                             <CardMedia
                                 component="img"
                                 height="auto"
@@ -45,9 +45,10 @@ function Lane_section() {
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
-                    </Card>
-                    <Card>
-                        <CardActionArea>
+                </Card>
+                <hr className={ section.cardSplitter }/>
+                <Card className={section.item}>
+                    <CardActionArea className={section.actionArea}>
                             <CardMedia
                                 component="img"
                                 height="auto"
@@ -65,8 +66,7 @@ function Lane_section() {
                             </CardContent>
                         </CardActionArea>
                     </Card>
-                </Box>
-            </Container>
+                </Box>         
         </Box>
         );
 }

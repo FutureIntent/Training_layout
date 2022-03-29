@@ -60,7 +60,7 @@ function Fraction_section() {
                             />
                             <Box className="wrapper">
                                 <h1 className="header_1">BOT LANE</h1>
-                                <p className="description_1">Bot lane is a role so important to success that they have a dedicated support champion to protect them in lane. What follows is what you need to start crushing bot lane in your games.</p>
+                                <p className="description_1">Bot lane is a role so important to success that they have a dedicated support champion to protect them in lane. </p>
                             </Box>
                         </Box>
                     </Box>
