@@ -1,20 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 
+$fontFamily: 'Play', sans-serif;
+
+@function if-important($important) {
+    @return #{if($important, '!important', '')};
+}
+
+@mixin defaultFont($fontSize, $important: false) {
+    font-family: $fontFamily if-important($important);
+    font-size: $fontSize if-important($important);
+}
 
 .container {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2% 0%;
 
     .grid {
-        margin-top: 2%;
         width: 90%;
         display: grid;
         grid-template-columns: auto 1% auto 1% auto;
         column-gap: 2%;
         row-gap: 5%;
 
-        .cardSplitter { 
+        .cardSplitter {
             border-top: 0;
             border-bottom: 0;
             border-left: 0;
@@ -25,6 +36,14 @@
 
         .actionArea {
             text-align: center;
+
+            .header {
+                @include defaultFont(2vw);
+            }
+
+            .text {
+                @include defaultFont(1.5vw);
+            }
         }
     }
 }
@@ -60,5 +79,12 @@
         &:nth-child(n+2){
             margin-top: 3%;
         }
+    }
+    .header {
+        @include defaultFont(6vw, true);
+    }
+
+    .text {
+        @include defaultFont(4vw, true);
     }
 }

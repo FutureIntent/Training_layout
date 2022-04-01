@@ -85,7 +85,7 @@ width: 100%;
 @media only screen and (max-width: 600px) and (min-width: 0px) {
 
     .container {
-    margin-bottom: 7vw;
+    margin-bottom: 9vw;
     }
 
     .swiper-button-next::after {
@@ -101,7 +101,12 @@ width: 100%;
         background-position: 0% 60% !important;
     }
 
+    .header_1 {
+    font-size: 7vw !important;
+    }
+
     .description_1 {
-    font-size: 3.5vw !important;
+        font-size: 4vw !important;
+        line-height: 5vw;
     }
 }

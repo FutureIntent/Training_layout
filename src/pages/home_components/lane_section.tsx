@@ -16,10 +16,10 @@ function Lane_section() {
                                 alt="top"
                             />
                             <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h5" component="div" className={ section.header }>
                                     TOP LANE
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body2" color="text.secondary" className={ section.text }>
                                     Lizards are a widespread group of squamate reptiles, with over 6,000
                                     species, ranging across all continents except Antarctica
                                 </Typography>
@@ -36,10 +36,10 @@ function Lane_section() {
                                 alt="top"
                             />
                             <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h5" component="div" className={section.header}>
                                     MID LANE
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body2" color="text.secondary" className={section.text}>
                                     Lizards are a widespread group of squamate reptiles, with over 6,000
                                     species, ranging across all continents except Antarctica
                                 </Typography>
@@ -56,10 +56,10 @@ function Lane_section() {
                                 alt="top"
                             />
                             <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h5" component="div" className={section.header}>
                                     BOT LANE
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body2" color="text.secondary" className={section.text}>
                                     Lizards are a widespread group of squamate reptiles, with over 6,000
                                     species, ranging across all continents except Antarctica
                                 </Typography>
