@@ -50,17 +50,57 @@ $fontFamily: 'Play', sans-serif;
 
 /* Large devices (laptops/desktops, 993px and up) */
 @media only screen and (max-width: 1200px) and (min-width: 993px) {
-    
+    .header {
+        @include defaultFont(2.5vw, true);
+    }
+
+    .text {
+        @include defaultFont(2vw, true);
+    }
 }
 
 /* Medium devices (landscape tablets, 769px and up) */
 @media only screen and (max-width: 992px) and (min-width: 769px) {
-    
+    .header {
+        @include defaultFont(2.5vw, true);
+    }
+
+    .text {
+        @include defaultFont(2vw, true);
+    }
+}
+
+/* Medium devices (landscape tablets, 769px and up) */
+@media only screen and (max-width: 992px) and (min-width: 769px) and (orientation: portrait) {
+    .header {
+        @include defaultFont(3.5vw, true);
+    }
+
+    .text {
+        @include defaultFont(2.5vw, true);
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 601px and up) */
 @media only screen and (max-width: 768px) and (min-width: 601px) {
-    
+    .header {
+        @include defaultFont(3vw, true);
+    }
+
+    .text {
+        @include defaultFont(2vw, true);
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 601px and up) */
+@media only screen and (max-width: 768px) and (min-width: 601px) and (orientation: portrait) {
+    .header {
+        @include defaultFont(3vw, true);
+    }
+
+    .text {
+        @include defaultFont(2.5vw, true);
+    }
 }
 
 /* Extra small devices (phones, 600px and down) */

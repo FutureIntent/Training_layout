@@ -1,0 +1,27 @@
+
+.container {
+    background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(33, 33, 33));
+    min-height: 4vw;
+}
+
+/* Large devices (laptops/desktops, 993px and up) */
+@media only screen and (max-width: 1200px) and (min-width: 993px) {
+
+}
+
+/* Medium devices (landscape tablets, 769px and up) */
+@media only screen and (max-width: 992px) and (min-width: 769px) {
+ 
+}
+
+/* Small devices (portrait tablets and large phones, 601px and up) */
+@media only screen and (max-width: 768px) and (min-width: 601px) {
+
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) and (min-width: 0px) {
+    .container {
+        min-height: 10vw;
+    }
+}

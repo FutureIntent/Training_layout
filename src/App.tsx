@@ -6,14 +6,14 @@ import {
 } from "react-router-dom";
 
 import Home from './pages/home';
+import Header from './components/header'
 
 function App() {
 
-
-
   return (
       <BrowserRouter>
-          <Routes>
+          <Header />
+          <Routes>             
               <Route path="/" element={<Home />} />
           </Routes>
       </BrowserRouter>
