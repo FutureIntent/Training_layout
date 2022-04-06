@@ -2,6 +2,19 @@
 .container {
     background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(33, 33, 33));
     min-height: 4vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0% 2%;
+
+    .menuIcon{
+        color: rgb(255 255 255);
+        transform: scale(2.5);
+        &:hover{
+            color: rgb(220, 220, 220);
+        }
+    }
 }
 
 /* Large devices (laptops/desktops, 993px and up) */

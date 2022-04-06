@@ -4,11 +4,13 @@
     "\\public",
     "\\src",
     "\\src\\assets",
+    "\\src\\components",
     "\\src\\css",
+    "\\src\\css\\header",
     "\\src\\css\\home",
     "\\src\\pages",
     "\\src\\pages\\home_components"
   ],
-  "SelectedNode": "\\src\\pages\\home_components\\fraction_section.tsx",
+  "SelectedNode": "\\src\\css\\home\\lane_section.module.scss",
   "PreviewInSolutionExplorer": false
 }
