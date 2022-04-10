@@ -1,12 +1,18 @@
+@function if-important($important) {
+    @return #{if($important, '!important', '')};
+}
+
+@mixin MenuImageScale($scale, $important: false) {
+    transform: scale($scale) if-important($important);
+}
 
 .container {
     background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(33, 33, 33));
-    min-height: 4vw;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding: 0% 2%;
+    padding: 0.5% 2%;
 
     .menuIcon{
         color: rgb(255 255 255);
@@ -19,22 +25,31 @@
 
 /* Large devices (laptops/desktops, 993px and up) */
 @media only screen and (max-width: 1200px) and (min-width: 993px) {
-
+    .menuIcon {
+        @include MenuImageScale(2,true);
+    }
 }
 
 /* Medium devices (landscape tablets, 769px and up) */
 @media only screen and (max-width: 992px) and (min-width: 769px) {
- 
+    .menuIcon {
+        @include MenuImageScale(2,true);
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 601px and up) */
 @media only screen and (max-width: 768px) and (min-width: 601px) {
-
+    .menuIcon {
+        @include MenuImageScale(2,true);
+    }
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) and (min-width: 0px) {
     .container {
         min-height: 10vw;
+    }
+    .menuIcon {
+        @include MenuImageScale(1.5,true);
     }
 }
