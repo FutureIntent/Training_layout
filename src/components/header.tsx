@@ -5,11 +5,21 @@ import style from './../css/header/header.module.scss';
 
 function Header() {
 
+    function menu() {
+        const menu = document.getElementById("menu");
+        if (menu) {
+            menu.style.width = "100%";
+        }
+    }
+
     return (
         <Box className={ style.container }>
-            <IconButton>
-                <MenuIcon className={ style.menuIcon }/>
+            <IconButton onClick={ menu }>
+                <MenuIcon className={style.menuIcon} />
             </IconButton>
+            <Box className={ style.menu } id="menu">
+                fsf
+            </Box>
         </Box>
         );
 }
