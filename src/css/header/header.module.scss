@@ -6,6 +6,18 @@
     transform: scale($scale) if-important($important);
 }
 
+@mixin CloseFadeIn() {
+    @keyframes CloseFadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+}
+
 .container {
     background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(33, 33, 33));
     display: flex;
@@ -29,12 +41,40 @@
         top: 0px;
         width: 0%;
         height: 100vh;
-        background-color: rgba(0,0,0,0.8);
+        background-color: rgba(0,0,0,0.9);
         z-index: 2;
         transition: 2s;
         overflow-x: hidden;
+        overflow-y: hidden;
         transition-duration: 1s;
         transition-timing-function: ease-in-out;
+
+        .close_wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 2%;
+
+            .close_button {
+                opacity: 0%;
+                display: none;
+                cursor: pointer;
+                border: none;
+                background-color: transparent;
+                animation-name: CloseFadeIn;
+                animation-duration: 1s;
+                animation-timing-function: ease-in-out;
+                animation-fill-mode: forwards;
+
+                @include CloseFadeIn();
+
+                .close_icon {
+                    @extend .menuIcon;
+                    filter: drop-shadow(0 0 0.5vw white);
+                }
+            }
+        }
     }
 }
 
