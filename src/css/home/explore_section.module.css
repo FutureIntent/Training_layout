@@ -82,6 +82,11 @@
     --white-color: #fafafa;
 }
 
+.btn_link {
+text-decoration: none;
+color: inherit;
+}
+
 .btn {
     width: 70%;
     height: 6vw;

@@ -6,17 +6,19 @@ import {
 } from "react-router-dom";
 
 import Home from './pages/home';
-import Header from './components/header'
+import Header from './components/header';
+import Vote from './pages/vote';
 
 function App() {
 
   return (
-      <BrowserRouter>        
+         <BrowserRouter>        
               <Header />
-               <Routes>             
-                  <Route path="/" element={ <Home /> } />
-               </Routes>
-      </BrowserRouter>
+                 <Routes>             
+                     <Route path="/" element={<Home />} />
+                     <Route path="/vote" element={<Vote />} />
+                 </Routes>
+         </BrowserRouter>
   );
 }
 

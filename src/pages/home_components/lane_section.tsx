@@ -1,14 +1,16 @@
 import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import section from './../../css/home/lane_section.module.scss';
 
 function Lane_section() {
 
     return (
         <Box className={ section.container }>        
-                <Box className={section.grid}>
-                <Card className={ section.item }>
-                    <CardActionArea className={ section.actionArea }>
+            <Box className={section.grid}>
+                <Card className={section.item}>
+                    <Link to="/vote" className={ section.link }>
+                        <CardActionArea className={ section.actionArea }>
                             <CardMedia
                                 component="img"
                                 height="auto"
@@ -25,10 +27,12 @@ function Lane_section() {
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
+                    </Link>
                 </Card>
                 <hr className={ section.cardSplitter }/>
                 <Card className={section.item}>
-                    <CardActionArea className={section.actionArea}>
+                    <Link to="/vote" className={section.link}>
+                        <CardActionArea className={section.actionArea}>
                             <CardMedia
                                 component="img"
                                 height="auto"
@@ -45,10 +49,12 @@ function Lane_section() {
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
+                    </Link>
                 </Card>
                 <hr className={ section.cardSplitter }/>
                 <Card className={section.item}>
-                    <CardActionArea className={section.actionArea}>
+                    <Link to="/vote" className={section.link}>
+                        <CardActionArea className={section.actionArea}>
                             <CardMedia
                                 component="img"
                                 height="auto"
@@ -65,8 +71,9 @@ function Lane_section() {
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
-                    </Card>
-                </Box>         
+                    </Link>
+                </Card>
+            </Box>         
         </Box>
         );
 }

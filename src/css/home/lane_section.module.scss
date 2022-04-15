@@ -18,6 +18,11 @@ $fontFamily: 'Play', sans-serif;
     align-items: center;
     padding: 2% 0%;
 
+    .link {
+        text-decoration: none;
+        color: inherit;
+    }
+
     .grid {
         width: 90%;
         display: grid;
