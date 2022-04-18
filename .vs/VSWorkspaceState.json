@@ -11,6 +11,6 @@
     "\\src\\pages",
     "\\src\\pages\\home_components"
   ],
-  "SelectedNode": "\\src\\pages\\home.tsx",
+  "SelectedNode": "\\src\\pages\\home_components\\logo_section.tsx",
   "PreviewInSolutionExplorer": false
 }

@@ -8,6 +8,7 @@ import {
 import Home from './pages/home';
 import Header from './components/header';
 import Vote from './pages/vote';
+import About from './pages/about';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
                  <Routes>             
                      <Route path="/" element={<Home />} />
                      <Route path="/vote" element={<Vote />} />
+                     <Route path="/about" element={<About />} />
                  </Routes>
          </BrowserRouter>
   );

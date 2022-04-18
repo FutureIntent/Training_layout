@@ -1,9 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+$fontFamily: 'Play', sans-serif;
+$shadow: 0 0 0.5vw white;
+
 @function if-important($important) {
     @return #{if($important, '!important', '')};
 }
 
 @mixin MenuImageScale($scale, $important: false) {
     transform: scale($scale) if-important($important);
+}
+
+@mixin FadeInProperties() {
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 @mixin FadeIn() {
@@ -29,6 +41,7 @@
     .menuIcon {
         color: rgb(255 255 255);
         transform: scale(2.5);
+        filter: drop-shadow(0 0 0.1vw white);
 
         &:hover {
             color: rgb(220, 220, 220);
@@ -48,6 +61,9 @@
         overflow-y: hidden;
         transition-duration: 1s;
         transition-timing-function: ease-in-out;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
 
         .close_wrapper {
             display: flex;
@@ -62,21 +78,39 @@
                 cursor: pointer;
                 border: none;
                 background-color: transparent;
-                animation-name: FadeIn;
-                animation-duration: 1s;
-                animation-timing-function: ease-in-out;
-                animation-fill-mode: forwards;
-
-                @include FadeIn();
+                @include FadeInProperties();
 
                 .close_icon {
                     @extend .menuIcon;
-                    filter: drop-shadow(0 0 0.5vw white);
+                    filter: drop-shadow($shadow);
+                }
+            }
+        }
+
+        .content_wrapper {
+            display: none;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            @include FadeInProperties();
+
+            .menu_option {
+                color: white;
+                font-size: 3vw;
+                font-family: $fontFamily;
+                text-shadow: $shadow;
+
+                .link {
+                    text-decoration: none;
+                    color: inherit;
                 }
             }
         }
     }
 }
+
+@include FadeIn();
 
 /* Large devices (laptops/desktops, 993px and up) */
 @media only screen and (max-width: 1200px) and (min-width: 993px) {
