@@ -30,6 +30,33 @@ $shadow: 0 0 0.5vw white;
     }
 }
 
+@mixin UnderLine($width) {
+    border: none;
+    width: $width;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+    border-bottom-width: 0.3vw;
+    transition-property: width;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    box-shadow: $shadow;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 0%;
+}
+
+@mixin TextProperties($fontSize) {
+    display: block;
+    color: white;
+    font-size: $fontSize;
+    font-family: $fontFamily;
+    text-shadow: $shadow;
+    position: relative;
+    margin: 0%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .container {
     background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(33, 33, 33));
     display: flex;
@@ -58,7 +85,6 @@ $shadow: 0 0 0.5vw white;
         z-index: 2;
         transition: 2s;
         overflow-x: hidden;
-        overflow-y: hidden;
         transition-duration: 1s;
         transition-timing-function: ease-in-out;
         display: flex;
@@ -95,15 +121,62 @@ $shadow: 0 0 0.5vw white;
             align-items: center;
             @include FadeInProperties();
 
-            .menu_option {
-                color: white;
-                font-size: 3vw;
-                font-family: $fontFamily;
-                text-shadow: $shadow;
+            .option_wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
 
-                .link {
-                    text-decoration: none;
-                    color: inherit;
+                .option_dropDown {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    visibility: hidden;
+
+                    .dropDown_wrapper {
+                        height: 0%;
+                        overflow: hidden;
+                        transition-property: height;
+                        transition-duration: 1s;
+                        transition-timing-function: ease-in-out;
+
+                        .dropDown_option{
+                            @include TextProperties(3vw);
+                        }
+                    }
+
+                    &:hover {
+                        visibility: visible;
+
+                        .dropDown_wrapper{
+                            height: 100%;
+                        }
+                    }
+                }
+
+                .menu_option {
+                    @include TextProperties(4vw);
+
+                    .option_underLine {
+                        @include UnderLine(0%);
+                    }
+
+                    &:hover {
+                        .option_underLine {
+                            @include UnderLine(100%);
+                        }
+                    }
+
+                    &:hover ~ .option_dropDown {
+                        visibility: visible;
+                    }
+
+                    &:hover ~ .option_dropDown {
+                        .dropDown_wrapper {
+                            height: 100%;
+                        }
+                    }
                 }
             }
         }
@@ -140,5 +213,9 @@ $shadow: 0 0 0.5vw white;
     }
     .menuIcon {
         @include MenuImageScale(1.5,true);
+    }
+
+    .menu_option{
+        font-size: 7vw !important;
     }
 }

@@ -40,22 +40,35 @@ function Header() {
                         <CloseIcon className={ style.close_icon }/>
                     </button>                  
                 </Box>
-                <Box className={ style.content_wrapper } id="content">
-                    <p className={style.menu_option}>
-                        <Link to="/" className={style.link} onClick={menu_close}>
+                <Box className={style.content_wrapper} id="content">
+                    <Box className={style.option_wrapper}>                   
+                        <Link to="/" className={style.menu_option} onClick={menu_close}>
                             HOME
-                        </Link>
-                    </p>
-                    <p className={style.menu_option}>
-                        <Link to="/about" className={style.link} onClick={menu_close}>
+                            <hr className={style.option_underLine} />
+                        </Link>                                              
+                    </Box>
+                    <Box className={style.option_wrapper}>
+                        <Link to="/about" className={style.menu_option} onClick={menu_close}>
                             ABOUT
+                            <hr className={style.option_underLine} />
                         </Link>
-                    </p>
-                    <p className={style.menu_option}>
-                        <Link to="/vote" className={style.link} onClick={menu_close}>
-                            VOTE
-                        </Link>
-                    </p>
+                    </Box>
+                    <Box className={style.option_wrapper}>
+                      <p className={style.menu_option}>VOTE</p>
+                        <Box className={style.option_dropDown}>
+                            <Box className={style.dropDown_wrapper}>
+                                <Link to="/vote" className={style.dropDown_option} onClick={menu_close}>
+                                TOP
+                                </Link>
+                                <Link to="/vote" className={style.dropDown_option} onClick={menu_close}>
+                                    MID
+                                </Link>
+                                <Link to="/vote" className={style.dropDown_option} onClick={menu_close}>
+                                    BOT
+                                </Link>
+                            </Box>
+                        </Box>
+                    </Box>
                 </Box>
             </Box>
         </Box>
