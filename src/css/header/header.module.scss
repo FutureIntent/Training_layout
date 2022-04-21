@@ -127,6 +127,10 @@ $shadow: 0 0 0.5vw white;
                 justify-content: center;
                 align-items: center;
 
+                &:nth-child(n+1){
+                    margin-top: 2%;
+                }
+
                 .option_dropDown {
                     width: 100%;
                     display: flex;
