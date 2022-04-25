@@ -45,10 +45,10 @@ $shadow: 0 0 0.5vw white;
     margin-left: 0%;
 }
 
-@mixin TextProperties($fontSize) {
+@mixin TextProperties($fontSize, $important: false) {
     display: block;
     color: white;
-    font-size: $fontSize;
+    font-size: $fontSize if-important($important);
     font-family: $fontFamily;
     text-shadow: $shadow;
     position: relative;
@@ -89,7 +89,6 @@ $shadow: 0 0 0.5vw white;
         transition-timing-function: ease-in-out;
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
 
         .close_wrapper {
             display: flex;
@@ -116,9 +115,9 @@ $shadow: 0 0 0.5vw white;
         .content_wrapper {
             display: none;
             flex-direction: column;
-            height: 100%;
             justify-content: center;
             align-items: center;
+            margin:auto;
             @include FadeInProperties();
 
             .option_wrapper {
@@ -127,7 +126,7 @@ $shadow: 0 0 0.5vw white;
                 justify-content: center;
                 align-items: center;
 
-                &:nth-child(n+1){
+                &:nth-child(n+2){
                     margin-top: 2%;
                 }
 
@@ -194,6 +193,13 @@ $shadow: 0 0 0.5vw white;
     .menuIcon {
         @include MenuImageScale(2,true);
     }
+    .menu_option {
+        @include TextProperties(6vw, true);
+    }
+
+    .dropDown_option {
+        @include TextProperties(5vw,true);
+    }
 }
 
 /* Medium devices (landscape tablets, 769px and up) */
@@ -201,12 +207,27 @@ $shadow: 0 0 0.5vw white;
     .menuIcon {
         @include MenuImageScale(2,true);
     }
+    .menu_option {
+        @include TextProperties(7vw, true);
+    }
+
+    .dropDown_option {
+        @include TextProperties(6vw,true);
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 601px and up) */
 @media only screen and (max-width: 768px) and (min-width: 601px) {
     .menuIcon {
         @include MenuImageScale(2,true);
+    }
+
+    .menu_option {
+        @include TextProperties(6vw, true);    
+    }
+
+    .dropDown_option {
+        @include TextProperties(5vw,true);
     }
 }
 
@@ -219,7 +240,27 @@ $shadow: 0 0 0.5vw white;
         @include MenuImageScale(1.5,true);
     }
 
-    .menu_option{
-        font-size: 7vw !important;
+    .menu_option {
+        @include TextProperties(10vw, true);
+        text-shadow: 0 0 1.5vw white !important;
+
+        .option_underLine {
+            @include UnderLine(0%);
+            box-shadow: 0 0 1.5vw white !important;
+            border-width: 1vw !important;
+        }
+
+        &:hover {
+            .option_underLine {
+                @include UnderLine(100%);
+                box-shadow: 0 0 1.5vw white !important;
+                border-width: 1vw !important;
+            }
+        }
+    }
+
+    .dropDown_option {
+        @include TextProperties(9vw,true);
+        text-shadow: 0 0 1.5vw white !important;
     }
 }
