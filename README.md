@@ -1,4 +1,4 @@
-# Project is still in progress
+# Instruction
 
 ### `npm install`
 ### `npm start`
